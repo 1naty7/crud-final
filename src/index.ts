@@ -3,6 +3,7 @@ import cors  from "cors"
 import QuizRouter from "./routes/Quizes"
 import StorageRouter from "./routes/Storage"
 import UserRouter from "./routes/Users"
+import BankRouter from "./routes/Bank"
 import * as dotenv from "dotenv";
 dotenv.config({ path: __dirname + '/.env' });
 
@@ -19,6 +20,7 @@ const PUBLIC_URL = process.env.PUBLIC_URL
 app.use(("/api/quiz"), QuizRouter)
 app.use(("/api/storage"), StorageRouter)
 app.use(("/api/user"), UserRouter)
+app.use(("/api/bank"), BankRouter)
 
 dbConnect()
 

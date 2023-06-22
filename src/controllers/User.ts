@@ -36,7 +36,7 @@ export const loginUser = async (req: express.Request, res: express.Response) => 
         let body  = matchedData(req)
         const user: any = await UserModel.findOne({ email: body.email }).select("password name email image id").populate("image")
         const isCorrect = await comparePassword(body.password, user.password)
-        var token = jwt.sign({user} , SECRET_KEY);
+        var token = jwt.sign(user , SECRET_KEY);
         user.set("password", undefined, { strict: false })
         if (isCorrect) {
             const userData = {
