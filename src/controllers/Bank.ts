@@ -3,11 +3,11 @@ import { BankModel } from "../models/Bank"
 import { handleError } from "../utils/handleError"
 import { body } from "express-validator"
 var jwt = require('jwt-simple');
-import * as dotenv from "dotenv";
 import { decode } from "jsonwebtoken";
+
+import * as dotenv from "dotenv";
 dotenv.config({ path: __dirname + '/.env' });
 const SECRET_KEY = process.env.SECRET_KEY
-
 export const getBanks = async (req: express.Request, res: express.Response) => {
     try {
         let tokenJWT

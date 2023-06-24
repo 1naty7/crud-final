@@ -6,9 +6,9 @@ import Quizes from "./Quizes"
 
 const router = Router()
 
-router.use(("quiz"), Quizes)
-router.use(("storage"), Storage)
-router.use(("user"), User)
-router.use(("bank"), Bank)
+router.use(("/quiz"), Quizes)
+router.use(("/storage"), Storage)
+router.use(("/user"), User)
+router.use(("/bank"), Bank)
 
 export default router
