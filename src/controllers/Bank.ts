@@ -20,7 +20,6 @@ export const getBanks = async (req: express.Request, res: express.Response) => {
             const bankes = await BankModel.find({author:decoded.user._id}).populate("image")
             res.send(bankes)
         }
-
     } catch (e) {
         console.log(e)
         handleError(res, "GET QUIZES WRONG", 400)
