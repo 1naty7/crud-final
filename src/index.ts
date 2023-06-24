@@ -8,7 +8,7 @@ import * as dotenv from "dotenv";
 dotenv.config({ path: __dirname + '/.env' });
 
 import { dbConnect } from "./utils/handleDBConnect"
-
+import apiRoutes from "./routes/index"
 const app = express()
 app.use(cors())
 app.use(express.json())
@@ -17,10 +17,7 @@ app.use('/storage', express.static(__dirname + '/storage'));
 const PORT = 3001
 const PUBLIC_URL = process.env.PUBLIC_URL
 
-app.use(("/api/quiz"), QuizRouter)
-app.use(("/api/storage"), StorageRouter)
-app.use(("/api/user"), UserRouter)
-app.use(("/api/bank"), BankRouter)
+app.use("/api", apiRoutes)
 
 dbConnect()
 
