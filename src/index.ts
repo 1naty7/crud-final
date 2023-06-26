@@ -14,7 +14,7 @@ app.use(cors())
 app.use(express.json())
 app.use(express.static("storage"))
 app.use('/storage', express.static(__dirname + '/storage'));
-const PORT = 3001
+const PORT = 3000
 const PUBLIC_URL = process.env.PUBLIC_URL
 
 app.use("/api", apiRoutes)

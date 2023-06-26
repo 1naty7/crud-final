@@ -4,10 +4,11 @@ const Schema = mongoose.Schema;
 const Bank = new Schema(
     {
         name: String,
-        expense: {type:Number, default:0},
+        description:{type:String, default:''},
+        transaction: [{ type: Schema.Types.ObjectId, ref: 'TransactionModel' }],
         image: { type: Schema.Types.ObjectId, ref: 'StorageModel' },
-        income: {type:Number, default:0},
         author:  { type: Schema.Types.ObjectId, ref: 'UserModel' },
+        initial:{type:Number, default:0}
     },
     {
         timestamps: true, //Todo CreatedAt, updatedAt,
