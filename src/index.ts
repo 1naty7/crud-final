@@ -23,6 +23,6 @@ dbConnect()
 
 app.listen(PORT, () => {
     console.log(PUBLIC_URL)
-    console.log("PORT")
+    console.log("PORT 3000")
 })
 
