@@ -75,7 +75,7 @@ export const deleteBank = async (req: express.Request, res: express.Response) =>
     try {
         const id = req.params.id
         console.log(id)
-        const bank = await BankModel.deleteOne({_id:id})
+        const bank = await BankModel.findByIdAndDelete(id)
         console.log("hola")
         res.send(bank)
     } catch {
