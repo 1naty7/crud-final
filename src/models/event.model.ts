@@ -13,6 +13,7 @@ const event = new Schema({
   description: { type: String, required: true },
   category: { type: String, required: true },
   isEditMode: { type : Boolean},
+  author:  { type: Schema.Types.ObjectId, ref: 'UserModel' },
   tareas: [
     {
       list: { type: String },

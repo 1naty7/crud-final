@@ -9,6 +9,6 @@ const router = Router()
 router.post("/createEvent", controllers.Event.createEvent);
 router.get("/getEvent", controllers.Event.getEvent)
 router.put("/updateEvent", controllers.Event.updateEvent)
-router.delete("/deleteEvent/:_id", controllers.Event.deleteEvent) // quuery params
+router.delete("/deleteEvent/:title", controllers.Event.deleteEvent) // quuery params
 
 export default router
