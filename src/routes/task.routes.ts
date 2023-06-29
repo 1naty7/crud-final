@@ -1,10 +1,12 @@
 import express from "express"
-import { getTasks, createTask, deleteTask, updateTask } from "../controllers/task.controller"
+import { getTasks, createTask, deleteTask, updateTask, getTask } from "../controllers/task.controller"
 import { authRequired } from "../middleware/authMiddleware"
 
 const router = express.Router()
 
 router.get(("/getTasks"), authRequired, getTasks)
+
+router.get(("/getTask/:id"), authRequired, getTask)
 
 router.post(("/createTask"),  authRequired,createTask)
 

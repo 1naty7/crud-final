@@ -27,16 +27,16 @@ export const getTasks = async (req: express.Request, res: express.Response) => {
     }
 }
 
-// export const getBank = async (req: express.Request, res: express.Response) => {
-//     try {
-//         const id = req.params.id
-//         const bank = await BankModel.findById(id).populate("image").select("-_id")
-//         res.send(bank)
-//     } catch (e) {
-//         console.log(e)
-//         handleError(res, "GET QUIZES WRONG", 400)
-//     }
-// }
+export const getTask = async (req: express.Request, res: express.Response) => {
+    try {
+        const id = req.params.id
+        const task = await TaskModel.findById(id)
+        res.send(task)
+    } catch (e) {
+        console.log(e)
+        handleError(res, "COULDN'T GET TASK", 400)
+    }
+}
 
 export const createTask = async (req: express.Request, res: express.Response) => {
     try {

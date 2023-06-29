@@ -8,6 +8,7 @@ const Task = new Schema(
         type: { type: String},
         startdate: {type:String},
         enddate: {type:String},
+        inCharge: {type: String},
         author: { type: Schema.Types.ObjectId, ref: 'UserModel' },
     },
     {
